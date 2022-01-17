@@ -5,6 +5,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: MontserratSemibold;
+  src: url("fonts/MontserratSemibold-Yz368.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .lyons {
   font-family: Lyons;
+}
+
+
+.MontserratSemibold {
+  font-family: MontserratSemibold;
 }
