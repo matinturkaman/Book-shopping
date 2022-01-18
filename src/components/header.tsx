@@ -1,5 +1,6 @@
 import books from "../svg/books.svg";
 import { Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 function Header(): JSX.Element {
   return (
@@ -17,26 +18,28 @@ function Header(): JSX.Element {
         Buy the new and trending books
       </Text>
       <Flex flexDir="row">
-        <Button
-          w="120px"
-          h="35px"
-          rounded="100px"
-          bg="#2C1810"
-          mt="20px"
-          color="#F8F3ED"
-          fontWeight="normal"
-          mr="5px"
-          _hover={{
-            bg: "#F8F3ED",
-            color: "#2C1810",
-            border: "1px",
-            borderColor: "#2C1810",
-          }}
-          _focus={{}}
-          _active={{}}
-        >
-          Explore
-        </Button>
+        <Link to="/explore">
+          <Button
+            w="120px"
+            h="35px"
+            rounded="100px"
+            bg="#2C1810"
+            mt="20px"
+            color="#F8F3ED"
+            fontWeight="normal"
+            mr="5px"
+            _hover={{
+              bg: "#F8F3ED",
+              color: "#2C1810",
+              border: "1px",
+              borderColor: "#2C1810",
+            }}
+            _focus={{}}
+            _active={{}}
+          >
+            Explore
+          </Button>
+        </Link>
         <Button
           w="120px"
           h="35px"

@@ -1,6 +1,7 @@
 import { Button, Center, Container, Flex, Image, Text } from "@chakra-ui/react";
 import { products } from "../data/data";
 import rate from "../svg/rate.svg";
+import { Link } from "react-router-dom";
 
 function HomeBody(): JSX.Element {
   return (
@@ -21,7 +22,7 @@ function HomeBody(): JSX.Element {
           justifyContent="space-between"
           flexWrap="wrap"
         >
-          {products.map((p) => {
+          {products.slice(products.length - 3).map((p) => {
             return (
               <Flex w="320px" key={p.id} flexDir="column">
                 <Flex
@@ -43,14 +44,20 @@ function HomeBody(): JSX.Element {
                     justifyContent="space-between"
                   >
                     <Image w="180px" src={rate} />
-                    <Flex flexDir="column">
-                      <Text zIndex="10" w="65%" className="MontserratSemibold">
-                        {p.name}
-                      </Text>
-                      <Text zIndex="10" color="#A0AEC0">
-                        {p.writer}
-                      </Text>
-                    </Flex>
+                    <Link to={{ pathname: `/book/${p.id}`, state: p }}>
+                      <Flex flexDir="column">
+                        <Text
+                          zIndex="10"
+                          w="65%"
+                          className="MontserratSemibold"
+                        >
+                          {p.name}
+                        </Text>
+                        <Text zIndex="10" color="#A0AEC0">
+                          {p.writer}
+                        </Text>
+                      </Flex>
+                    </Link>
                     <Button
                       w="125px"
                       h="35px"
@@ -80,24 +87,26 @@ function HomeBody(): JSX.Element {
           >
             <Text className="MontserratSemibold">Want to see more?</Text>
             <Text color="#A0AEC0">Explore more of trending books</Text>
-            <Button
-              w="114px"
-              h="32px"
-              mt="15px"
-              bg="#2C1810"
-              color="#F8F3ED"
-              fontWeight="normal"
-              _hover={{
-                color: "#2C1810",
-                bg: "#F8F3ED",
-                border: "1px",
-                borderColor: "#2C1810",
-              }}
-              _active={{}}
-              _focus={{}}
-            >
-              View more
-            </Button>
+            <Link to="/explore">
+              <Button
+                w="114px"
+                h="32px"
+                mt="15px"
+                bg="#2C1810"
+                color="#F8F3ED"
+                fontWeight="normal"
+                _hover={{
+                  color: "#2C1810",
+                  bg: "#F8F3ED",
+                  border: "1px",
+                  borderColor: "#2C1810",
+                }}
+                _active={{}}
+                _focus={{}}
+              >
+                View more
+              </Button>
+            </Link>
           </Flex>
         </Flex>
       </Center>

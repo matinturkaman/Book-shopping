@@ -1,18 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import About from "./pages/about";
-import Explore from "./pages/explore";
-import Home from "./pages/home";
-import Location from "./pages/location";
-import "./App.css"
+import "./App.css";
+import { routes } from "./routes/routes";
 
 function App(): JSX.Element {
   return (
     <Router>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/explore" component={Explore} />
-        <Route path="/location" component={Location} />
-        <Route path="/about" component={About} />
+        {routes.map((route, index) => {
+          return <Route key={index} path={route.path} exact={route.exact} component={route.component} />;
+        })}
       </Switch>
     </Router>
   );

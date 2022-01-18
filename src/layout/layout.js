@@ -3,7 +3,7 @@ import Nav from "../components/navigation";
 
 const Layout = ({ children }) => {
   return (
-    <Container maxW="container.3xl" minH="100vh" p="0" bg="#F8F3ED">
+    <Container maxW="1919px" minH="100vh" p="0" bg="#F8F3ED">
       <Nav />
       {children}
     </Container>

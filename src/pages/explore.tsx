@@ -1,11 +1,14 @@
-import { Container, Heading } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
+import BookProducts from "../components/BookProducts";
+import PopularBooks from "../components/popularBooks";
 import Layout from "../layout/layout";
 
 function Explore(): JSX.Element {
   return (
     <Layout>
       <Container>
-        <Heading>this is explore</Heading>
+        <PopularBooks />
+        <BookProducts />
       </Container>
     </Layout>
   );

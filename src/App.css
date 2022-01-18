@@ -12,11 +12,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: MontserratNormal;
+  src: url("fonts/MontserratThin-MVY6x.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .lyons {
   font-family: Lyons;
 }
 
-
 .MontserratSemibold {
   font-family: MontserratSemibold;
+}
+
+.MontserratNormal {
+  font-family: MontserratNormal;
 }

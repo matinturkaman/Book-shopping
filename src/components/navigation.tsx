@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 function Nav(): JSX.Element {
   const navItem = [
-    { name: "explore", link: "explore", id: 1 },
-    { name: "location", link: "location", id: 2 },
-    { name: "about", link: "about", id: 3 },
+    { name: "explore", link: "/explore", id: 1 },
+    { name: "location", link: "/location", id: 2 },
+    { name: "about", link: "/about", id: 3 },
   ];
 
   return (
