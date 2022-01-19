@@ -25,7 +25,9 @@ function Nav(): JSX.Element {
         })}
       </Flex>
       <Flex w="19%" justifyContent="space-around" alignItems="center">
-        <Image src={cart} />
+        <Link to="/cart">
+          <Image src={cart} />
+        </Link>
         <Button
           w="100px"
           h="35px"

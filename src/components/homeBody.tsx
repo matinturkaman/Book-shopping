@@ -2,8 +2,15 @@ import { Button, Center, Container, Flex, Image, Text } from "@chakra-ui/react";
 import { products } from "../data/data";
 import rate from "../svg/rate.svg";
 import { Link } from "react-router-dom";
+import { useCartAction } from "../providers/cartProvider";
 
 function HomeBody(): JSX.Element {
+  const dispatch = useCartAction();
+
+  const addToCart = (p: any) => {
+    dispatch({ type: "ADD_TO_CART", payload: p });
+  };
+
   return (
     <Container mt="50px">
       <Center flexDir="column">
@@ -71,6 +78,7 @@ function HomeBody(): JSX.Element {
                       _hover={{ bg: "#2C1810", color: "#F8F3ED" }}
                       _active={{}}
                       _focus={{}}
+                      onClick={() => addToCart(p)}
                     >
                       Buy Now
                     </Button>
