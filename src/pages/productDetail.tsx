@@ -11,12 +11,15 @@ import Layout from "../layout/layout";
 import rate from "../svg/rate.svg";
 import box from "../svg/box.svg";
 import like from "../svg/like.svg";
+import { useCartAction } from "../providers/cartProvider";
 
-function ProductDetail({
-  location,
-}: {
-  location: any;
-}): JSX.Element {
+function ProductDetail({ location }: { location: any }): JSX.Element {
+  const dispatch = useCartAction();
+
+  const addToCart = (p: any) => {
+    dispatch({ type: "ADD_TO_CART", payload: p });
+  };
+
   return (
     <Layout>
       <Container maxW="container.xl" mt="30px" display="flex" flexDir="row">
@@ -110,6 +113,7 @@ function ProductDetail({
                     borderColor: "#2C1810",
                     color: "#2C1810",
                   }}
+                  onClick={() => addToCart(location.state)}
                   _focus={{}}
                   _active={{}}
                 >
