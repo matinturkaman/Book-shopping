@@ -2,12 +2,15 @@ import { Button, Center, Container, Flex, Image, Text } from "@chakra-ui/react";
 import { products } from "../data/data";
 import rate from "../svg/rate.svg";
 import { Link } from "react-router-dom";
-import { useCartAction } from "../providers/cartProvider";
+import { useCart, useCartAction } from "../providers/cartProvider";
+import { CheckInCart } from "../utils/checkInCart";
+import { dataInterface } from "../utils/dataInterface";
 
 function HomeBody(): JSX.Element {
   const dispatch = useCartAction();
+  const { cart } = useCart();
 
-  const addToCart = (p: any) => {
+  const addToCart = (p: dataInterface) => {
     dispatch({ type: "ADD_TO_CART", payload: p });
   };
 
@@ -80,7 +83,7 @@ function HomeBody(): JSX.Element {
                       _focus={{}}
                       onClick={() => addToCart(p)}
                     >
-                      Buy Now
+                      {CheckInCart(cart, p) ? "In Cart" : "Buy Now"}
                     </Button>
                   </Flex>
                 </Flex>
@@ -123,4 +126,3 @@ function HomeBody(): JSX.Element {
 }
 
 export default HomeBody;
-

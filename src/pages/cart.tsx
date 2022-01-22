@@ -7,9 +7,10 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import { useCart, useCartAction } from "../providers/cartProvider";
+import { Link } from "react-router-dom";
 import React from "react";
 import Layout from "../layout/layout";
-import { useCart, useCartAction } from "../providers/cartProvider";
 import rate from "../svg/rate.svg";
 import trash from "../svg/trash.svg";
 
@@ -31,7 +32,13 @@ function Cart() {
 
   return (
     <Layout>
-      <Container maxW="container.xl" mt="30px" display="flex" flexDir="row">
+      <Container
+        maxW="container.xl"
+        minH="80vh"
+        mt="30px"
+        display="flex"
+        flexDir="row"
+      >
         <Flex flexDir="column" w="100%">
           <Text fontSize="40px" className="lyons">
             Cart Page
@@ -121,7 +128,40 @@ function Cart() {
               );
             })
           ) : (
-            <Text>not found</Text>
+            <Flex
+              w="full"
+              h="full"
+              justifyContent="center"
+              alignItems="center"
+              flexDir="column"
+            >
+              <Text
+                fontSize="35px"
+                color="#2C1810"
+                className="MontserratSemibold"
+              >
+                Your cart is empty
+              </Text>
+              <Text color="#a89988">Safely add a product to your cart</Text>
+              <Link to="/">
+                <Button
+                  w="200px"
+                  h="33px"
+                  mt="15px"
+                  bg="none"
+                  color="#2C1810"
+                  border="1px"
+                  borderColor="#2C1810"
+                  rounded="3px"
+                  zIndex="10"
+                  _hover={{ bg: "#2C1810", color: "#fff" }}
+                  _active={{}}
+                  _focus={{}}
+                >
+                  home
+                </Button>
+              </Link>
+            </Flex>
           )}
         </Flex>
         <CartSummary />
@@ -150,6 +190,7 @@ export function CartSummary() {
       alignItems="center"
       flexDir="column"
       position="relative"
+      display={cart.length ? "flex" : "none"}
     >
       <Text fontSize="20px" mt="8px">
         order summary
@@ -169,12 +210,16 @@ export function CartSummary() {
         </Flex>
       </Flex>
       <Button
-        w="85%"
+        w="90%"
+        h="33px"
         position="absolute"
         bottom="2"
         bg="#2C1810"
         color="#fff"
-        rounded="full"
+        rounded="3px"
+        _hover={{ bg: "#1a0e09" }}
+        _active={{}}
+        _focus={{}}
       >
         Checkout
       </Button>

@@ -1,7 +1,7 @@
 import { Badge, Button, Flex, Image, Text } from "@chakra-ui/react";
 import logo from "../svg/logo.svg";
 import cartSvg from "../svg/cart.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useCart } from "../providers/cartProvider";
 
 function Nav(): JSX.Element {
@@ -21,9 +21,13 @@ function Nav(): JSX.Element {
       <Flex w="180px" justifyContent="space-between" fontWeight="medium">
         {navItem.map((item) => {
           return (
-            <Link to={item.link} key={item.id}>
+            <NavLink
+              to={item.link}
+              key={item.id}
+              activeStyle={{ color: "#E35024" }}
+            >
               <Text>{item.name}</Text>
-            </Link>
+            </NavLink>
           );
         })}
       </Flex>
