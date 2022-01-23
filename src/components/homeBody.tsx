@@ -20,23 +20,45 @@ function HomeBody(): JSX.Element {
         <Text className="lyons" fontSize="40px">
           New Books
         </Text>
-        <Text textAlign="center" w="600px" className="lyons" color="#B0B0B0">
+        <Text
+          textAlign="center"
+          w={{ xl: "600px", lg: "600px", md: "600px", sm: "400px" }}
+          className="lyons"
+          color="#B0B0B0"
+        >
           Lorem ipsum is placeholder text commonly used in the graphic, print,
           and publishing industries for previewing layouts and visual mockups
         </Text>
       </Center>
       <Center>
         <Flex
-          minW="900px"
+          minW={{
+            xl: "900px",
+            lg: "850px",
+            md: "750px",
+            sm: "200px",
+            base: "180px",
+          }}
+          justifyContent={{
+            xl: "space-between",
+            lg: "space-between",
+            md: "space-between",
+            sm: "center",
+          }}
           mt="50px"
-          justifyContent="space-between"
           flexWrap="wrap"
         >
           {products.slice(products.length - 3).map((p) => {
             return (
               <Flex w="320px" key={p.id} flexDir="column">
                 <Flex
-                  w="max-content"
+                  w={{
+                    xl: "max-content",
+                    lg: "auto",
+                    md: "auto",
+                    sm: "auto",
+                    base: "auto",
+                  }}
                   flexDir="row"
                   justifyContent="space-between"
                   mt="50px"
@@ -53,12 +75,27 @@ function HomeBody(): JSX.Element {
                     flexDir="column"
                     justifyContent="space-between"
                   >
-                    <Image w="180px" src={rate} />
+                    <Image
+                      w={{
+                        xl: "180px",
+                        lg: "180px",
+                        md: "180px",
+                        sm: "180px",
+                        base: "130px",
+                      }}
+                      src={rate}
+                    />
                     <Link to={{ pathname: `/book/${p.id}`, state: p }}>
                       <Flex flexDir="column">
                         <Text
                           zIndex="10"
-                          w="65%"
+                          w={{
+                            xl: "65%",
+                            lg: "65%",
+                            md: "65%",
+                            sm: "65%",
+                            base: "85%",
+                          }}
                           className="MontserratSemibold"
                         >
                           {p.name}
@@ -95,6 +132,7 @@ function HomeBody(): JSX.Element {
             alignItems="center"
             justifyContent="center"
             flexDir="column"
+            mt="25px"
           >
             <Text className="MontserratSemibold">Want to see more?</Text>
             <Text color="#A0AEC0">Explore more of trending books</Text>

@@ -15,18 +15,35 @@ function BookProducts() {
   };
 
   return (
-    <Center flexDir="column">
+    <Center>
       <Flex
-        minW="900px"
+        minW={{
+          xl: "900px",
+          lg: "850px",
+          md: "750px",
+          sm: "200px",
+          base: "180px",
+        }}
+        justifyContent={{
+          xl: "space-between",
+          lg: "space-between",
+          md: "space-between",
+          sm: "center",
+        }}
         mt="50px"
-        justifyContent="space-between"
         flexWrap="wrap"
       >
         {products.map((p) => {
           return (
             <Flex w="320px" key={p.id} flexDir="column">
               <Flex
-                w="max-content"
+                w={{
+                  xl: "max-content",
+                  lg: "auto",
+                  md: "auto",
+                  sm: "auto",
+                  base: "auto",
+                }}
                 flexDir="row"
                 justifyContent="space-between"
                 mt="50px"
@@ -39,10 +56,29 @@ function BookProducts() {
                   rounded="md"
                 />
                 <Flex ml="20px" flexDir="column" justifyContent="space-between">
-                  <Image w="180px" src={rate} />
+                  <Image
+                    w={{
+                      xl: "180px",
+                      lg: "180px",
+                      md: "180px",
+                      sm: "180px",
+                      base: "130px",
+                    }}
+                    src={rate}
+                  />
                   <Link to={{ pathname: `/book/${p.id}`, state: p }}>
                     <Flex flexDir="column">
-                      <Text zIndex="10" w="65%" className="MontserratSemibold">
+                      <Text
+                        zIndex="10"
+                        w={{
+                          xl: "65%",
+                          lg: "65%",
+                          md: "65%",
+                          sm: "65%",
+                          base: "85%",
+                        }}
+                        className="MontserratSemibold"
+                      >
                         {p.name}
                       </Text>
                       <Text zIndex="10" color="#A0AEC0">

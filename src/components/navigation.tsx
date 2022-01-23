@@ -26,12 +26,18 @@ function Nav(): JSX.Element {
               key={item.id}
               activeStyle={{ color: "#E35024" }}
             >
-              <Text>{item.name}</Text>
+              <Text display={["none", "none", "block", "block"]}>
+                {item.name}
+              </Text>
             </NavLink>
           );
         })}
       </Flex>
-      <Flex w="19%" justifyContent="space-around" alignItems="center">
+      <Flex
+        w={{ xl: "19%", lg: "auto", md: "auto", sm: "auto" }}
+        justifyContent="space-around"
+        alignItems="center"
+      >
         <Link to="/cart">
           <Flex position="relative">
             <Image src={cartSvg} />
@@ -55,6 +61,7 @@ function Nav(): JSX.Element {
           </Flex>
         </Link>
         <Button
+          display={["none", "none", "none", "none", "block"]}
           w="100px"
           h="35px"
           rounded="100px"
@@ -73,6 +80,7 @@ function Nav(): JSX.Element {
           Sign up
         </Button>
         <Button
+          display={["none", "none", "none", "none", "block"]}
           w="60px"
           h="35px"
           rounded="100px"

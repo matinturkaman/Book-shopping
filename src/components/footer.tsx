@@ -32,20 +32,45 @@ function Footer() {
   return (
     <Flex
       w="100%"
-      h="555px"
+      minH="555px"
       bg="#372F2D"
       mt="30px"
       position="relative"
       flexDir="row"
-      justifyContent="space-between"
+      justifyContent={{
+        xl: "space-between",
+        lg: "space-between",
+        md: "start",
+        sm: "start",
+        base: "start",
+      }}
     >
-      <Flex flexDir="column">
-        <Image w="330px" src={library} position="absolute" top="0" />
+      <Flex flexDir="column" ml="20px">
+        <Image
+          w="330px"
+          src={library}
+          position="absolute"
+          top="0"
+          display={{
+            xl: "block",
+            lg: "block",
+            md: "none",
+            sm: "none",
+            base: "none",
+          }}
+        />
         <Flex
           position="absolute"
           bottom="2"
           left="2"
           className="MontserratNormal"
+          display={{
+            xl: "flex",
+            lg: "flex",
+            md: "flex",
+            sm: "flex",
+            base: "none",
+          }}
         >
           <Text color="#fff">© {new Date().getFullYear()} created by</Text>
           <Link href="https://github.com/matinturkaman" isExternal>
@@ -58,14 +83,30 @@ function Footer() {
       <Flex w="55%" pt="25px" flexDir="column" fontWeight="medium">
         <Text color="#FF693D">NEW</Text>
         <Text
-          w="350px"
+          w={{
+            xl: "350px",
+            lg: "350px",
+            md: "350px",
+            sm: "350px",
+            base: "250px",
+          }}
           color="#fff"
           fontSize="44px"
           className="MontserratSemibold"
         >
           Request a new book
         </Text>
-        <Flex position="relative" w="380px">
+        <Flex
+          position="relative"
+          w="380px"
+          display={{
+            xl: "flex",
+            lg: "flex",
+            md: "flex",
+            sm: "flex",
+            base: "none",
+          }}
+        >
           <Input
             w="full"
             h="50px"
@@ -100,28 +141,33 @@ function Footer() {
               <path
                 d="M4 12H20"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M13 5L20 12L13 19"
                 stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </Button>
         </Flex>
-        <Flex mt="30px">
+        <Flex
+          mt="30px"
+          flexDir={{
+            xl: "row",
+            lg: "row",
+            md: "row",
+            sm: "row",
+            base: "column",
+          }}
+        >
           {footerItems.map((item) => {
             return (
-              <Flex
-                key={item.id}
-                flexDir="column"
-                alignItems="flex-start"
-              >
+              <Flex key={item.id} flexDir="column" alignItems="flex-start">
                 <Text
                   color="#fff"
                   ml="25px"

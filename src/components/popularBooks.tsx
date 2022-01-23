@@ -36,10 +36,45 @@ function PopularBooks() {
         className="lyons"
         mt="40px"
         color="#2C1810"
+        display={{
+          xl: "flex",
+          lg: "flex",
+          md: "none",
+          sm: "none",
+          base: "none",
+        }}
       >
         Popular books
       </Text>
-      <Flex w="95vw" justifyContent="space-evenly" mt="50px">
+      <Text
+        fontWeight="medium"
+        fontSize="45px"
+        className="lyons"
+        mt="40px"
+        color="#2C1810"
+        display={{
+          xl: "none",
+          lg: "none",
+          md: "flex",
+          sm: "flex",
+          base: "flex",
+        }}
+      >
+        New books
+      </Text>
+      <Flex
+        w="95vw"
+        justifyContent="space-evenly"
+        mt="50px"
+        flexDir="row"
+        display={{
+          xl: "flex",
+          lg: "flex",
+          md: "none",
+          sm: "none",
+          base: "none",
+        }}
+      >
         {popularTrendBooks.map((p) => {
           return (
             <Flex
@@ -51,6 +86,7 @@ function PopularBooks() {
               key={p.id}
               flexDir="row"
               alignItems="center"
+              mt="30px"
             >
               <Image
                 src={p.src}
