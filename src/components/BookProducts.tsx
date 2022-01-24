@@ -1,10 +1,10 @@
 import { Button, Center, Flex, Image, Text } from "@chakra-ui/react";
 import { products } from "../data/data";
-import rate from "../svg/rate.svg";
 import { Link } from "react-router-dom";
 import { useCart, useCartAction } from "../providers/cartProvider";
 import { CheckInCart } from "../utils/checkInCart";
 import { dataInterface } from "../utils/dataInterface";
+import rate from "../svg/rate.svg";
 
 function BookProducts() {
   const dispatch = useCartAction();
@@ -30,7 +30,8 @@ function BookProducts() {
           md: "space-between",
           sm: "center",
         }}
-        mt="50px"
+        mt="30px"
+        mb="30px"
         flexWrap="wrap"
       >
         {products.map((p) => {

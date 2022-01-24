@@ -22,11 +22,29 @@ function ProductDetail({ location }: { location: any }): JSX.Element {
 
   return (
     <Layout>
-      <Container maxW="container.xl" mt="30px" display="flex" flexDir="row">
+      <Container
+        maxW="container.xl"
+        mt="30px"
+        mb="30px"
+        display="flex"
+        flexDir={{
+          xl: "row",
+          lg: "row",
+          md: "row",
+          sm: "column",
+          base: "column",
+        }}
+      >
         <Flex flex={3} justifyContent="center">
           <Flex flexDir="column">
             <Text
-              w="450px"
+              w={{
+                xl: "450px",
+                lg: "450px",
+                md: "450px",
+                sm: "450px",
+                base: "300px",
+              }}
               fontSize="25px"
               fontWeight="bold"
               className="MontserratSemibold"
@@ -39,10 +57,31 @@ function ProductDetail({ location }: { location: any }): JSX.Element {
             </Center>
           </Flex>
         </Flex>
-        <Flex flex={1}>
-          <Flex flexDir="column">
+        <Flex flex={1} justifyContent="center">
+          <Flex
+            flexDir="column"
+            alignItems={{
+              xl: "normal",
+              lg: "normal",
+              sm: "center",
+              base: "center",
+            }}
+            textAlign={{
+              xl: "unset",
+              lg: "unset",
+              md: "unset",
+              sm: "center",
+              base: "center",
+            }}
+          >
             <Text
-              w="300px"
+              w={{
+                xl: "300px",
+                lg: "300px",
+                md: "300px",
+                sm: "300px",
+                base: "250px",
+              }}
               fontSize="25px"
               fontWeight="bold"
               className="MontserratSemibold"
@@ -89,7 +128,7 @@ function ProductDetail({ location }: { location: any }): JSX.Element {
                 className="MontserratSemibold"
                 color="#2C1810"
               >
-                $ {` `} {location.state.price}
+                $ {` `} {location.state.offPrice}
               </Text>
               <Text
                 fontSize="14px"
@@ -97,11 +136,11 @@ function ProductDetail({ location }: { location: any }): JSX.Element {
                 color="#8D827D"
                 textDecorationLine="line-through"
               >
-                $ {` `} {location.state.offPrice}
+                $ {` `} {location.state.price}
               </Text>
               <Flex justifyContent="space-between" flexDir="row">
                 <Button
-                  w="250px"
+                  w={["230px", "230px", "250px", "250px"]}
                   h="50px"
                   rounded="md"
                   mt="20px"
