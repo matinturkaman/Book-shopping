@@ -8,12 +8,14 @@ function Explore(): JSX.Element {
   return (
     <Layout>
       <Container>
+        
         <PopularBooks />
         <BookProducts />
+
       </Container>
     </Layout>
   );
-  
+
 }
 
 export default Explore;

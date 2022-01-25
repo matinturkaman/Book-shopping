@@ -19,15 +19,15 @@ function Cart() {
   const dispatch = useCartAction();
 
   const handleInc = (cartItem: any) => {
-    dispatch({ type: "ADD_TO_CART", payload: cartItem });
+      dispatch({ type: "ADD_TO_CART", payload: cartItem });
   };
 
   const handleDec = (cartItem: any) => {
-    dispatch({ type: "DEC_PRODUCT", payload: cartItem });
+      dispatch({ type: "DEC_PRODUCT", payload: cartItem });
   };
 
   const handleRemove = (cartItem: any) => {
-    dispatch({ type: "REMOVE_PRODUCT", payload: cartItem });
+      dispatch({ type: "REMOVE_PRODUCT", payload: cartItem });
   };
 
   return (

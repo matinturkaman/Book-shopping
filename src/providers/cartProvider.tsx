@@ -1,6 +1,8 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 import CartReducer from "./cartReducer";
 
+
+
 const initialState = {
   cart: [],
   total: 0,
