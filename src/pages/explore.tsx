@@ -4,14 +4,12 @@ import PopularBooks from "../components/popularBooks";
 import Layout from "../layout/layout";
 
 function Explore(): JSX.Element {
-
+ 
   return (
     <Layout>
-      <Container>
-        
-        <PopularBooks />
-        <BookProducts />
-
+      <Container> 
+         <PopularBooks />
+         <BookProducts /> 
       </Container>
     </Layout>
   );

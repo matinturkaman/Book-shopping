@@ -15,7 +15,6 @@ import like from "../svg/like.svg";
 
 function ProductDetail({ location }: { location: any }): JSX.Element {
   const dispatch = useCartAction();
-  
 
   const addToCart = (p: any) => {
     dispatch({ type: "ADD_TO_CART", payload: p });
