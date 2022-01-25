@@ -13,6 +13,7 @@ import Layout from "../layout/layout";
 import rate from "../svg/rate.svg";
 import trash from "../svg/trash.svg";
 
+
 function Cart() {
   const { cart } = useCart();
   const dispatch = useCartAction();
@@ -227,6 +228,7 @@ export function CartSummary() {
           <Text color="#887167">$ {total}</Text>
         </Flex>
       </Flex>
+
       <Button
         w="90%"
         h="33px"
@@ -241,6 +243,7 @@ export function CartSummary() {
       >
         Checkout
       </Button>
+
     </Flex>
   );
 }

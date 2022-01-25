@@ -10,10 +10,12 @@ function BookProducts() {
   const dispatch = useCartAction();
   const { cart } = useCart();
 
-  
+
+
   const addToCart = (p: dataInterface) => {
     dispatch({ type: "ADD_TO_CART", payload: p });
   };
+  
 
   return (
     <Center>
