@@ -13,6 +13,7 @@ function HomeBody(): JSX.Element {
   const addToCart = (p: dataInterface) => {
     dispatch({ type: "ADD_TO_CART", payload: p });
   };
+  
 
   return (
     <Container mt="50px">
@@ -31,6 +32,7 @@ function HomeBody(): JSX.Element {
         </Text>
       </Center>
       <Center>
+
         <Flex
           minW={{
             xl: "900px",

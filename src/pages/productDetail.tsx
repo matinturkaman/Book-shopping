@@ -7,14 +7,15 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
+import { useCartAction } from "../providers/cartProvider";
 import Layout from "../layout/layout";
 import rate from "../svg/rate.svg";
 import box from "../svg/box.svg";
 import like from "../svg/like.svg";
-import { useCartAction } from "../providers/cartProvider";
 
 function ProductDetail({ location }: { location: any }): JSX.Element {
   const dispatch = useCartAction();
+  
 
   const addToCart = (p: any) => {
     dispatch({ type: "ADD_TO_CART", payload: p });

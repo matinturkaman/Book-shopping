@@ -4,6 +4,7 @@ import PopularBooks from "../components/popularBooks";
 import Layout from "../layout/layout";
 
 function Explore(): JSX.Element {
+
   return (
     <Layout>
       <Container>
@@ -12,6 +13,7 @@ function Explore(): JSX.Element {
       </Container>
     </Layout>
   );
+  
 }
 
 export default Explore;
