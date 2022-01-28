@@ -7,14 +7,16 @@ import {
   Image,
   Text,
 } from "@chakra-ui/react";
-import { useCartAction } from "../providers/cartProvider";
+import { useCart, useCartAction } from "../providers/cartProvider";
 import Layout from "../layout/layout";
 import rate from "../svg/rate.svg";
 import box from "../svg/box.svg";
 import like from "../svg/like.svg";
+import { CheckInCart } from "../utils/checkInCart";
 
 function ProductDetail({ location }: { location: any }): JSX.Element {
   const dispatch = useCartAction();
+  const { cart } = useCart();
 
   const addToCart = (p: any) => {
     dispatch({ type: "ADD_TO_CART", payload: p });
@@ -156,7 +158,7 @@ function ProductDetail({ location }: { location: any }): JSX.Element {
                   _focus={{}}
                   _active={{}}
                 >
-                  add to cart
+                  {CheckInCart(cart, location.state) ? "In Cart" : "Buy Now"}
                 </Button>
                 <Button
                   w="60px"
