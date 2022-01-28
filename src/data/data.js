@@ -63,4 +63,20 @@ export const products = [
     src: "https://images-na.ssl-images-amazon.com/images/I/51-nXsSRfZL._SX328_BO1,204,203,200_.jpg",
     id: 8,
   },
+  {
+    name: "5 second rule",
+    writer: "Mel robbins",
+    price: 16,
+    offPrice: 12,
+    src: "https://kbimages1-a.akamaihd.net/117a2850-f7f0-4394-8646-1e8471ddec8b/1200/1200/False/the-5-second-rule.jpg",
+    id: 9,
+  },
+  {
+    name: "Soar Build Your Vision from the Ground Up",
+    writer: "T. D. Jakes",
+    price: 11,
+    offPrice: 5,
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLz0ceEze7n1htgr2ybahdWqFCHjwj3-H_tesxVb69LqV1S4cv",
+    id: 10,
+  },
 ];
