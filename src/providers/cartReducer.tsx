@@ -55,7 +55,7 @@ const removeProduct = (state: any, action: any) => {
   };
 };
 
-const CartReducer = (state: any, action: any) => {
+const CartReducer = (state: ProductProps, action: actionProps) => {
   switch (action.type) {
     case "ADD_TO_CART":
       return addToCart(state, action);

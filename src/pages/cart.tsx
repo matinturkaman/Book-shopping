@@ -13,23 +13,21 @@ import Layout from "../layout/layout";
 import rate from "../svg/rate.svg";
 import trash from "../svg/trash.svg";
 
-
 function Cart() {
   const { cart } = useCart();
   const dispatch = useCartAction();
 
-  const handleInc = (cartItem: any) => {
+  const handleInc = (cartItem: ProductProps) => {
     dispatch({ type: "ADD_TO_CART", payload: cartItem });
   };
 
-  const handleDec = (cartItem: any) => {
+  const handleDec = (cartItem: ProductProps) => {
     dispatch({ type: "DEC_PRODUCT", payload: cartItem });
   };
 
-  const handleRemove = (cartItem: any) => {
+  const handleRemove = (cartItem: ProductProps) => {
     dispatch({ type: "REMOVE_PRODUCT", payload: cartItem });
   };
-  
 
   return (
     <Layout>
@@ -244,7 +242,6 @@ export function CartSummary() {
       >
         Checkout
       </Button>
-
     </Flex>
   );
 }

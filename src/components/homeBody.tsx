@@ -4,18 +4,14 @@ import rate from "../svg/rate.svg";
 import { Link } from "react-router-dom";
 import { useCart, useCartAction } from "../providers/cartProvider";
 import { CheckInCart } from "../utils/checkInCart";
-import { dataInterface } from "../utils/dataInterface";
 
 function HomeBody(): JSX.Element {
   const dispatch = useCartAction();
   const { cart } = useCart();
 
-  
-
-  const addToCart = (p: dataInterface) => {
+  const addToCart: AddToCartProps = (p) => {
     dispatch({ type: "ADD_TO_CART", payload: p });
   };
-
 
   return (
     <Container mt="50px">
@@ -34,7 +30,6 @@ function HomeBody(): JSX.Element {
         </Text>
       </Center>
       <Center>
-
         <Flex
           minW={{
             xl: "900px",

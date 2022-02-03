@@ -3,14 +3,13 @@ import { products } from "../data/data";
 import { Link } from "react-router-dom";
 import { useCart, useCartAction } from "../providers/cartProvider";
 import { CheckInCart } from "../utils/checkInCart";
-import { dataInterface } from "../utils/dataInterface";
 import rate from "../svg/rate.svg";
 
 function BookProducts() {
   const dispatch = useCartAction();
   const { cart } = useCart();
 
-  const addToCart = (p: dataInterface) => {
+  const addToCart = (p: ProductProps) => {
     dispatch({ type: "ADD_TO_CART", payload: p });
   };
 

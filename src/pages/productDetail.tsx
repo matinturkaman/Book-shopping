@@ -18,7 +18,7 @@ function ProductDetail({ location }: { location: any }): JSX.Element {
   const dispatch = useCartAction();
   const { cart } = useCart();
 
-  const addToCart = (p: any) => {
+  const addToCart = (p: ProductProps) => {
     dispatch({ type: "ADD_TO_CART", payload: p });
   };
 
