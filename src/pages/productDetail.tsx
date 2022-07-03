@@ -92,7 +92,8 @@ function ProductDetail({ location }: { location: any }): JSX.Element {
             </Text>
             <Text
               w="300px"
-              className="MontserratNormal"
+              className="MontserratSemibold"
+              fontWeight="medium"
               color="#797A7B"
               mt="20px"
             >
